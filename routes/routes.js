@@ -1,7 +1,7 @@
 import { Router } from "express"; //importamos express
 const router = Router();
 
-import {registrarData, obtenerDataPorFiltro, obtenerData, actualizarData, eliminarData, realizarTransferencia, obtenerTransferencias} from "../controllers/queriesDbPool.js";
+import {registrarData, obtenerDataPorFiltro, obtenerData, actualizarData, eliminarData, realizarTransferencia, obtenerTransferencias} from "../controllers/queriesDbPool.js";   
 
 // Rutas para usuarios
 router.post("/registrarData", registrarData);
