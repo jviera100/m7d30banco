@@ -26,8 +26,5 @@ const config = {
 
 const pool = new Pool(config);
 
-// // Función asíncrona para conectar a la base de datos
-
-
 export default pool // se puede exportar el pool o llamarlo db
 

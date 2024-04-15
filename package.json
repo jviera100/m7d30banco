@@ -7,8 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "node --watch index.js",
-    "start": "nodemon index.js",
-    "dev": "nodemon dbClient.js"
+    "start": "nodemon index.js"    
   },
   "keywords": [],
   "author": "jonathan viera",
