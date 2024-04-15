@@ -1,11 +1,10 @@
 import pg from 'pg';
 import { Sequelize } from 'sequelize';
+
 const { Pool } = pg;
-// import "dotenv/config";
+
 process.loadEnvFile();
 
-
-// Configuración de la conexión a la base de datos PostgreSQL
 const { DB_HOST, DB_DATABASE, DB_PORT, DB_USER, DB_PASSWORD } = process.env;
 
 const config = {
@@ -14,9 +13,7 @@ const config = {
     port: DB_PORT,
     user: DB_USER,
     password: DB_PASSWORD,
-    allowExitOnIdle: true, // Si es true, la conexión se cerrará por inactividad
-
-    //conexion al db de neon
+    allowExitOnIdle: true,
     dialectOptions: {
         ssl: {
             require: true,
@@ -32,5 +29,4 @@ const sequelize = new Sequelize(DB_DATABASE, DB_USER, DB_PASSWORD, {
     host: DB_HOST,
 });
 
-export { sequelize, pool };
-
+export default { pool, sequelize };
