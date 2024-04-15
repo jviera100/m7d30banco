@@ -1,4 +1,5 @@
 import pg from 'pg';
+import { Sequelize } from 'sequelize';
 const { Pool } = pg;
 // import "dotenv/config";
 process.loadEnvFile();
@@ -26,5 +27,10 @@ const config = {
 
 const pool = new Pool(config);
 
-export default pool // se puede exportar el pool o llamarlo db
+const sequelize = new Sequelize(DB_DATABASE, DB_USER, DB_PASSWORD, {
+    dialect: 'postgres',
+    host: DB_HOST,
+});
+
+export { sequelize, pool };
 

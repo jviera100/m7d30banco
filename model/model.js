@@ -1,6 +1,5 @@
-import sequelize from '../config/db.js';
+import { sequelize } from '../config/dbPool.js'; // Cambio en la ruta de importación
 import { DataTypes } from 'sequelize';
-
 
 const Project = sequelize.define('project', {
     id: {
@@ -19,8 +18,6 @@ const Project = sequelize.define('project', {
     }
 }, {
     timestamps: true
-}
-    
-)
+});
 
-export default Project
+export default Project;
