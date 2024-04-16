@@ -165,4 +165,3 @@ export const obtenerTransferencias = async (req, res) => {
     console.log('El bloque try-catch ha terminado');
   }  
 };
-

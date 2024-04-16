@@ -17,6 +17,7 @@
           <div class="form-group text-center">
             <h5>Agregar Nuevo Usuario</h5>
             <hr class="bg-white w-50" />
+            <!-- CAPTURAR INPUT AL ESCUCHAR CLICK BOTON AGREGAR Y TRASLADAR A TABLA USUARIOS-->
             <div class="d-flex align-items-center justify-content-center">
               Nombre:
               <input id="nombreNuevoUsuario" class="form-control d-inline mx-3" required />
@@ -36,20 +37,18 @@
             <hr class="bg-white w-50" />
             <div class="d-flex align-items-center justify-content-center flex-wrap">
               <div class="mr-2">
+                <!-- CAPTURAR INPUT AL ESCUCHAR CLICK BOTON REALIZAR Y TRASLADAR A TABLA TRANSACCIONES-->
                 Emisor:
                 <select id="emisor" class="form-control mx-2 w-auto d-inline"></select>
               </div>
-
               <div class="mr-3">
                 Receptor:
                 <select id="receptor" class="form-control mx-2 w-auto d-inline"></select>
               </div>
-
               <div class="mr-3">
                 Monto:
                 <input type="text" class="form-control mx-2 w-auto d-inline" id="montoTransferencia" />
               </div>
-
               <button type="submit" class="btn btn-danger">Realizar</button>
             </div>
           </div>
@@ -57,6 +56,7 @@
       </div>
       <div class="col-12 row mt-3 mx-0 px-0">
         <div class="col-12 col-sm-5 text-center">
+          <!-- RECIBO LOS INPUT DE BOTON AGREGAR -->
           <h5>Tabla de usuarios</h5>
           <table class="table bg-light">
             <thead class="bg-danger text-white">
@@ -69,6 +69,7 @@
         </div>
 
         <div class="col-12 col-sm-7 text-center">
+          <!-- RECIBO LOS INPUT DE BOTON REALIZAR -->
           <h5>Tabla de Transferencias</h5>
           <table class="table bg-light">
             <thead class="bg-danger text-white">
@@ -88,6 +89,8 @@
     <script src="https://momentjs.com/downloads/moment.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="/js/script.js"></script>
+
+<!-- TABLA MODAL -->
 
     <div
       class="modal fade"
@@ -116,6 +119,7 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div> 
+
   </body>
 </html>
