@@ -29,4 +29,4 @@ const sequelize = new Sequelize(DB_DATABASE, DB_USER, DB_PASSWORD, {
     host: DB_HOST,
 });
 
-export { pool, sequelize };
+export default { pool, sequelize };
