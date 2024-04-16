@@ -1,21 +1,24 @@
+// Script Frontend
 const setInfoModal = (nombre, balance, id) => {
   $("#nombreEdit").val(nombre);
   $("#balanceEdit").val(balance);
-  $("#editButton").attr("onclick", `editUsuario('${id}')`);
+  $("#editButton").on("click", function() {
+      editUsuario(id);
+  });
 };
 
 const editUsuario = async (id) => {
   const name = $("#nombreEdit").val();
   const balance = $("#balanceEdit").val();
   try {
-    const { data } = await axios.put(`http://localhost:3000/actualizarData/${id}`, {
-      nombre: name,
-      balance: balance,
-    });
-    $("#exampleModal").modal("hide");
-    location.reload();
+      const { data } = await axios.put(`http://localhost:3000/actualizarData/${id}`, {
+          nombre: name,
+          balance: balance,
+      });
+      $("#exampleModal").modal("hide");
+      location.reload();
   } catch (e) {
-    alert("Algo salió mal..." + e);
+      alert("Algo salió mal..." + e);
   }
 };
 
