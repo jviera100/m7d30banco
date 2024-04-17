@@ -97,16 +97,16 @@ const getTransferQuery = async () => {
   try {
     const querys = {
       text: `SELECT
-        e.nombre AS emisor,
-        r.nombre AS receptor,
-        t.monto,
-        t.fecha
-      FROM
-        transferencias t
-      JOIN
-        usuarios e ON t.emisor = e.id
-      JOIN
-        usuarios r ON t.receptor = r.id;`,
+      e.nombre AS emisor,
+      r.nombre AS receptor,
+      t.monto,
+      t.fecha
+    FROM
+      transferencias t
+    JOIN
+      usuarios e ON t.emisor = e.id
+    JOIN
+      usuarios r ON t.receptor = r.id;`,
       rowMode: "array",
     };
     const result = await pool.query(querys);

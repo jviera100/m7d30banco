@@ -110,6 +110,7 @@ const eliminarUsuario = async (id) => {
 
 const getTransferencias = async () => {
   const { data } = await axios.get("http://localhost:3000/transferencias");
+  console.log(data);
   $(".transferencias").html("");
 
   data.forEach((t) => {
@@ -123,6 +124,8 @@ const getTransferencias = async () => {
    `);
   });
 };
+
+
 
 getUsuarios();
 getTransferencias();

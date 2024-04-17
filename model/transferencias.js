@@ -1,6 +1,6 @@
 import { sequelize } from '../config/db.js';
 import { DataTypes } from 'sequelize';
-import { Usuario } from './usuario.js'; // Importa el modelo de Usuario para la relación
+import { Usuario } from './usuarios.js'; // Importa el modelo de Usuario para la relación
 
 const Transferencia = sequelize.define('transferencia', {
     id: {

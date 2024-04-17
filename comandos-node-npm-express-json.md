@@ -929,8 +929,8 @@ ejemplo:
 
 
 
-
-
+---------------------------------------------
+?? que es esto
     
 const { emisor, receptor, monto } = datos
     const { id: emisorId } = (
@@ -940,3 +940,11 @@ const { emisor, receptor, monto } = datos
     const { id: receptorId } = (
       await pool.query(`SELECT * FROM usuarios WHERE nombre = '${receptor}'`)
     ).rows[0];
+-----------------------------------------------------
+body = post = backend
+query = get = lleva signo ? = porque filtra
+params = url
+------------------------------------------------
+entonces rowMode muestra un objeto como array?
+petstore.swagger.io para documentar api🤔
+HATEOAS🧐🤔🤯🧑‍🏫 permite paginar la data, mostrar tantos datos por pagina

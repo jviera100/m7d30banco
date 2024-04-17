@@ -23,10 +23,12 @@ app.use(cors());
 app.use(router);
 
 // Sincronizar modelos con la base de datos
-db.sequelize.sync().then(() => {
+// db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
       console.log(chalk.underline.bgCyanBright.magenta.bold.italic(`🔥🔥🔥🔥🔥Servidor corriendo en el puerto🔥🔥🔥🔥🔥http://localhost:${PORT}`));
   });
-}).catch(error => {
-  console.error('Error al sincronizar modelos:', error);
-});
+// }).catch(error => {
+//   console.error('Error al sincronizar modelos:', error);
+// });
+
+//no utilize sequelize porque daba error y en index.js y db.js comente los codigos de sequelize
