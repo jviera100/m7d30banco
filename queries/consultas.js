@@ -93,26 +93,47 @@ const addTranferQuery = async (datos) => {
   }
 };
 
+// const getTransferQuery = async () => {
+//   const query =  `SELECT
+//   e.nombre AS emisor,
+//   r.nombre AS receptor,
+//   t.monto,
+//   t.fecha
+// FROM
+//   transferencias t
+// JOIN
+//   usuarios e ON t.emisor = e.id
+// JOIN
+//   usuarios r ON t.receptor = r.id;`
+//   try {
+//     const querys = {
+//       text: query,
+//       rowMode: "array",
+//     };
+//     const result = await pool.query(querys);
+//     console.log(result.rows);
+//     return result.rows;
+//   } catch (error) {
+//     return error;
+//   }
+// };
 const getTransferQuery = async () => {
   try {
-    const querys = {
+    const query = {
       text: `SELECT
-      e.nombre AS emisor,
-      r.nombre AS receptor,
-      t.monto,
-      t.fecha
-    FROM
-      transferencias t
-    JOIN
-      usuarios e ON t.emisor = e.id
-    JOIN
-      usuarios r ON t.receptor = r.id;`,
-      rowMode: "array",
-    };
-    const result = await pool.query(querys);
+               e.nombre AS emisor,
+               r.nombre AS receptor,
+               t.monto,
+               t.fecha
+             FROM transferencias t
+             JOIN usuarios e ON t.emisor = e.id
+             JOIN usuarios r ON t.receptor = r.id` 
+               };
+    const result = await pool.query(query);
     console.log(result.rows);
     return result.rows;
   } catch (error) {
+    console.error('Error en la consulta SQL:', error);
     return error;
   }
 };

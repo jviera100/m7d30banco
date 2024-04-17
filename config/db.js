@@ -15,12 +15,12 @@ const config = {
     user: DB_USER,
     password: DB_PASSWORD,
     allowExitOnIdle: true,
-    dialectOptions: {
-        ssl: {
-            require: true,
-            rejectUnauthorized: false,
-        },
-    }
+    // dialectOptions: {
+    //     ssl: {
+    //         require: true,
+    //         rejectUnauthorized: false,
+    //     },
+    // }
 }
 
 export const pool = new Pool(config);
@@ -38,4 +38,11 @@ export const pool = new Pool(config);
 // });
 
 // export default { sequelize, pool };
-export default { pool };
+pool.connect((err, client, release) => {
+    if (err) {
+        return console.error('Error al conectarse a la base de datos:', err.stack);
+    }
+    console.log('\nConexión con la base de datos establecida.');
+    release();
+});
+export default pool;
