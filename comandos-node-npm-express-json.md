@@ -926,3 +926,17 @@ ejemplo:
     los controllers o queries tienen las funciones o consultas CRUD y este importan el dbPool.js,
     el dbPool.js es la conexion a la base de datos y este importa las variables de entorno de archivo .env 
     */
+
+
+
+
+
+    
+const { emisor, receptor, monto } = datos
+    const { id: emisorId } = (
+      await pool.query(`SELECT * FROM usuarios WHERE nombre = '${emisor}'`)
+    ).rows[0];
+    //buscamos el id del receptor
+    const { id: receptorId } = (
+      await pool.query(`SELECT * FROM usuarios WHERE nombre = '${receptor}'`)
+    ).rows[0];

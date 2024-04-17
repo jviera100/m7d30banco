@@ -1,59 +1,70 @@
-// Script Frontend
 const setInfoModal = (nombre, balance, id) => {
   $("#nombreEdit").val(nombre);
   $("#balanceEdit").val(balance);
-  $("#editButton").on("click", function() {
-      editUsuario(id);
-  });
+  $("#editButton").attr("onclick", `editUsuario('${id}')`);
 };
 
 const editUsuario = async (id) => {
   const name = $("#nombreEdit").val();
   const balance = $("#balanceEdit").val();
   try {
-      const { data } = await axios.put(`http://localhost:3000/actualizarData/${id}`, {
-          nombre: name,
-          balance: balance,
-      });
-      $("#exampleModal").modal("hide");
-      location.reload();
+    const { data } = await axios.put(
+      `http://localhost:3000/usuario?id=${id}`,
+      
+      {
+        nombre: name,
+        balance,
+      }
+    );
+    $("#exampleModal").modal("hide");
+    location.reload();
   } catch (e) {
-      alert("Algo salió mal..." + e);
+    alert("Algo salió mal..." + e);
   }
 };
 
-$("#formNuevoUsuario").submit(async (e) => {
+$("form:first").submit(async (e) => {
   e.preventDefault();
-  let nombre = $("#nombreNuevoUsuario").val();
-  let balance = Number($("#balanceNuevoUsuario").val());
+  let nombre = $("form:first input:first").val();
+  let balance = Number($("form:first input:nth-child(2)").val());
   try {
-    const response = await axios.post("http://localhost:3000/registrarData", {
-      nombre: nombre,
-      balance: balance,
+    const response = await fetch("http://localhost:3000/usuario", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        nombre,
+        balance,
+      }),
     });
-    $("#nombreNuevoUsuario").val("");
-    $("#balanceNuevoUsuario").val("");
+    $("form:first input:first").val("");
+    $("form:first input:nth-child(2)").val("");
     location.reload();
   } catch (e) {
     alert("Algo salió mal ..." + e);
   }
 });
 
-$("#formTransferencia").submit(async (e) => {
+$("form:last").submit(async (e) => {
   e.preventDefault();
-  let emisor = $("#emisor").val();
-  let receptor = $("#receptor").val();
-  let monto = $("#montoTransferencia").val();
+  let emisor = $("form:last select:first").val();
+  let receptor = $("form:last select:last").val();
+  let monto = $("#monto").val();
   if (!monto || !emisor || !receptor) {
     alert("Debe seleccionar un emisor, receptor y monto a transferir");
     return false;
   }
   try {
-    const response = await axios.post("http://localhost:3000/realizarTransferencia", {
-      emisor: emisor,
-      receptor: receptor,
-      monto: monto,
+    const response = await fetch("http://localhost:3000/transferencia", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        
+        emisor,
+        receptor,
+        monto,
+      }),
     });
+    const data = await response.json();
     location.reload();
   } catch (e) {
     console.log(e);
@@ -62,13 +73,12 @@ $("#formTransferencia").submit(async (e) => {
 });
 
 const getUsuarios = async () => {
-  try {
-    const response = await axios.get("http://localhost:3000/obtenerData");
-    let data = response.data;
-    $("#tablaUsuarios").html("");
+  const response = await fetch("http://localhost:3000/usuarios");
+  let data = await response.json();
+  $(".usuarios").html("");
 
-    data.forEach((c) => {
-      $("#tablaUsuarios").append(`
+  $.each(data, (i, c) => {
+    $(".usuarios").append(`
             <tr>
               <td>${c.nombre}</td>
               <td>${c.balance}</td>
@@ -85,42 +95,33 @@ const getUsuarios = async () => {
             </tr>
        `);
 
-      $("#emisor").append(`<option value="${c.nombre}">${c.nombre}</option>`);
-      $("#receptor").append(`<option value="${c.nombre}">${c.nombre}</option>`);
-    });
-  } catch (error) {
-    console.error("Error al obtener usuarios:", error);
-  }
+    $("#emisor").append(`<option value="${c.nombre}">${c.nombre}</option>`);
+    $("#receptor").append(`<option value="${c.nombre}">${c.nombre}</option>`);
+  });
 };
 
 const eliminarUsuario = async (id) => {
-  try {
-    const response = await axios.delete(`http://localhost:3000/eliminarData/${id}`);
-    getUsuarios();
-  } catch (error) {
-    console.error("Error al eliminar usuario:", error);
-  }
+  const response = await fetch(`http://localhost:3000/usuario?id=${id}`, {
+    method: "DELETE",
+  });
+  alert("Usuario eliminado");
+  getUsuarios();
 };
 
 const getTransferencias = async () => {
-  try {
-    const response = await axios.get("http://localhost:3000/obtenerTransferencias");
-    let data = response.data;
-    $("#tablaTransferencias").html("");
+  const { data } = await axios.get("http://localhost:3000/transferencias");
+  $(".transferencias").html("");
 
-    data.forEach((t) => {
-      $("#tablaTransferencias").append(`
+  data.forEach((t) => {
+    $(".transferencias").append(`
      <tr>
-       <td>${formatDate(t.fecha)}</td>
-       <td>${t.emisor}</td>
-       <td>${t.receptor}</td>
-       <td>${t.monto}</td>
+       <td> ${formatDate(t[3])} </td>
+       <td> ${t[0]} </td>
+       <td> ${t[1]} </td>
+       <td> ${t[2]} </td>
      </tr>
    `);
-    });
-  } catch (error) {
-    console.error("Error al obtener transferencias:", error);
-  }
+  });
 };
 
 getUsuarios();
@@ -131,3 +132,4 @@ const formatDate = (date) => {
   const timeFormat = moment(date).format("LTS");
   return `${dateFormat} ${timeFormat}`;
 };
+formatDate();

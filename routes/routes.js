@@ -1,17 +1,15 @@
 import { Router } from "express"; //importamos express
 const router = Router();
 
-import {registrarData, obtenerDataPorFiltro, obtenerData, actualizarData, eliminarData, realizarTransferencia, obtenerTransferencias} from "../controllers/queriesDbPool.js";   
+import { home, addUser, getUser, editUser, deleteUser, addTranfer, getTranfer } from "../controller/userController.js"; 
 
-// Rutas para usuarios
-router.post("/registrarData", registrarData);
-router.get("/obtenerDataPorFiltro/:id", obtenerDataPorFiltro);
-router.get("/obtenerData", obtenerData);
-router.put("/actualizarData/:id", actualizarData);
-router.delete("/eliminarData/:id", eliminarData);
 
-// Rutas para transferencias
-router.post("/realizarTransferencia", realizarTransferencia);
-router.get("/obtenerTransferencias", obtenerTransferencias);
+router.get("/", home)
+router.post("/usuario", addUser)
+router.get("/usuarios", getUser)
+router.put('/usuario', editUser)
+router.delete('/usuario', deleteUser)
+router.post('/transferencia', addTranfer)
+router.get('/transferencias', getTranfer)
 
-export default router;
+export default router
