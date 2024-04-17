@@ -3,7 +3,8 @@ import pg from 'pg';
 
 const { Pool } = pg;
 
-process.loadEnvFile();
+// process.loadEnvFile();
+import "dotenv/config"
 
 // const { DB_DIALECT, DB_HOST, DB_DATABASE, DB_PORT, DB_USER, DB_PASSWORD } = process.env;
 const { DB_HOST, DB_DATABASE, DB_PORT, DB_USER, DB_PASSWORD } = process.env;
@@ -11,7 +12,7 @@ const { DB_HOST, DB_DATABASE, DB_PORT, DB_USER, DB_PASSWORD } = process.env;
 const config = {
     host: DB_HOST,
     database: DB_DATABASE,
-    port: DB_PORT,
+    port: DB_PORT,   
     user: DB_USER,
     password: DB_PASSWORD,
     allowExitOnIdle: true,
