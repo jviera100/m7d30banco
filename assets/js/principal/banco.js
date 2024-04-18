@@ -52,7 +52,7 @@ $("form:last").submit(async (e) => {
   e.preventDefault();
   let emisor = $("form:last select:first").val();
   let receptor = $("form:last select:last").val();
-  let monto = $("#monto").val();
+  let monto = $("#monto").val(); //string capturado por el input html con jquery en javascript fronted
   if (!monto || !emisor || !receptor) {
     alert("Debe seleccionar un emisor, receptor y monto a transferir");
     return false;
