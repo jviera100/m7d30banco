@@ -9,6 +9,7 @@ const addUserQuery = async (datos) => {
     const result = await pool.query(query);
     return result.rows[0];
   } catch (error) {
+    console.error("Error al agregar usuario en la consulta:", error.stack);
     return error;
   }
 };
@@ -21,6 +22,7 @@ const getUserQuery = async () => {
     const result = await pool.query(querys);
     return result.rows;
   } catch (error) {
+    console.error("Error al obtener usuarios en la consulta:", error.stack);
     return error;
   }
 };
@@ -38,6 +40,7 @@ const editUserQuery = async (datos) => {
       result.rows[0];
     }
   } catch (error) {
+    console.error("Error al editar usuario en la consulta:", error.stack);
     return error;
   }
 };
@@ -53,6 +56,7 @@ const deleteUserQuery = async (id) => {
       throw new Error("No se encontro el usuario");
     }
   } catch (error) {
+    console.error("Error al eliminar usuario en la consulta:", error.stack);
     return error;
   }
 };
@@ -89,6 +93,7 @@ const addTranferQuery = async (datos) => {
     return true;
   } catch (error) {
     await pool.query("ROLLBACK");
+    console.error("Error al agregar transferencia en la consulta:", error.stack);
     return error;
   }
 };
@@ -130,10 +135,10 @@ const getTransferQuery = async () => {
              JOIN usuarios r ON t.receptor = r.id` 
                };
     const result = await pool.query(query);
-    console.log(result.rows);
+    console.log("Transferencias obtenidas:", result.rows);
     return result.rows;
   } catch (error) {
-    console.error('Error en la consulta SQL:', error);
+    console.error('Error al obtener transferencias en la consulta:', error.stack);
     return error;
   }
 };

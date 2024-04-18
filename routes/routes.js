@@ -3,7 +3,6 @@ const router = Router();
 
 import { home, addUser, getUser, editUser, deleteUser, addTranfer, getTranfer } from "../controller/userController.js"; 
 
-
 router.get("/", home)
 router.post("/usuario", addUser)
 router.get("/usuarios", getUser)

@@ -9,7 +9,7 @@ const __dirname = dirname(__filename);
 export default function setupMiddlewares(app) {
 // Middleware para archivos estáticos
     app.use(express.static(path.join(__dirname, '..', 'assets'))); 
-    app.use(express.static(path.join(__dirname, '..', 'views')));  
+    app.use(express.static(path.join(__dirname, '..', 'views'))); 
 // Middleware de manejo de errores global
 app.use((err, req, res, next) => {
     console.error('Error:', err.stack);

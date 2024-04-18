@@ -10,13 +10,10 @@ const PORT = process.env.PORT || 3000
 
 // Configuración de la carpeta estática y los middlewares
 setupMiddlewares(app);
-
 // Middleware para analizar solicitudes en formato JSON (reemplaza a body-parser)
 app.use(express.json()); 
-
 // Middleware para analizar solicitudes en formato URL (reemplaza a body-parser)
 app.use(express.urlencoded({ extended: false })); 
-
 // Middleware permite solicitudes desde otro dominio
 app.use(cors());
 
@@ -30,5 +27,4 @@ app.use(router);
 // }).catch(error => {
 //   console.error('Error al sincronizar modelos:', error);
 // });
-
 //no utilize sequelize porque daba error y en index.js y db.js comente los codigos de sequelize
