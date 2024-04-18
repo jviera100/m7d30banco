@@ -1,0 +1,15 @@
+/* Reset de estilos para todos los elementos de CSS */
+* {
+    margin: 0; /*margen*/
+    padding: 0; /*espacio entre elementos*/
+    border: 0;    /*borde*/
+}
+/* Estilo section body hero */
+#body-hero {
+    background-image: url("../img/doctor-strange-fondo.jpg");       
+    padding-top: 100px; /* Ajuste para evitar que el navbar se superponga al contenido */
+    color: black;
+} 
+
+ 
+  
