@@ -5,7 +5,7 @@
     border: 0;    /*borde*/
 }
 body {
-    background-image: url("../img/banco_fondo.jpg");        
+    background-image: url("../img/lineas.jpg");        
     color: black;
     -webkit-text-stroke: 2px black; /* Ancho y color del borde */  
     text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white; /* Definición del "borde" */     
