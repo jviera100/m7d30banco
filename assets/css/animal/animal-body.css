@@ -7,10 +7,9 @@
 
 /* Estilos para el cuerpo de la página */
 body {
-  background-image: url("../imgs/fondo-leon.jpg");
+  background-image: url("/img/fondo-leon.jpg");
   background-position: bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: cover;  
   height: 100vh;
   padding: 100px;
 }
