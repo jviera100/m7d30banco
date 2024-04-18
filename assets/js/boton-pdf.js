@@ -3,11 +3,11 @@ $(document).ready(function () {
     
         // boton pdf
         document.getElementById('abrir-pdf-1').addEventListener('click', function () {
-            window.open('/M7-22-Prueba.pdf', '_blank');
+            window.open('../documents/prueba .pdf', '_blank');
           });           
         //   // boton pdf
         // document.getElementById('abrir-pdf-2').addEventListener('click', function () {
-        //     window.open('./M4-22-prueba-programacion-avanzada-en-javascript.pdf', '_blank');
+        //     window.open('../documents/prueba .pdf', '_blank', '_blank');
         //   });      
   
     });
