@@ -5,12 +5,13 @@
     border: 0;    /*borde*/
 }
 body {
-    background-image: url("../img/banco_fondo.jpg");    
+    background-image: url("../img/banco_fondo.jpg"); 
+    color: black;   
   } 
 /* Estilo section body hero */
 #body-hero {           
     padding-top: 100px; /* Ajuste para evitar que el navbar se superponga al contenido */
-    color: black;
+    
 } 
 
  
