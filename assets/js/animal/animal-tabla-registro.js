@@ -51,8 +51,8 @@ btnRegistrar.addEventListener('click', function(event) {
             img = '';
     }
 
-    img = `./assets/imgs/${img}.jpg`; // Obtener la imagen del animal. Ahora todas las imágenes son .jpg
-    sonido = `./assets/sounds/${sonido}.mp3`; // Obtener el sonido del animal
+    img = `/img/${img}.jpg`; // Obtener la imagen del animal. Ahora todas las imágenes son .jpg
+    sonido = `/sounds/${sonido}.mp3`; // Obtener el sonido del animal
 
     // Crear una instancia de la clase Animal
     let animal = new Animal(name, edad, img, comentarios, sonido);
