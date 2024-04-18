@@ -5,6 +5,7 @@ const setInfoModal = (nombre, balance, id) => {
   $("#nombreEdit").val(nombre);
   $("#balanceEdit").val(balance);
   $("#editButton").attr("onclick", `editUsuario('${id}')`);
+  $("#exampleModal").modal("show");
 };
 
 const editUsuario = async (id) => {
@@ -120,14 +121,14 @@ const getTransferencias = async () => {
     const { data } = await axios.get("http://localhost:3000/transferencias");
     console.log("Datos de transferencias:", data);
     $(".transferencias").html("");
-
+//no usar indices
     data.forEach((t) => {
       $(".transferencias").append(`
-     <tr>
-       <td> ${formatDate(t[3])} </td>
-       <td> ${t[0]} </td>
-       <td> ${t[1]} </td>
-       <td> ${t[2]} </td>
+     <tr>     
+       <td> ${formatDate(t.fecha)} </td>
+       <td> ${t.emisor} </td>
+       <td> ${t.receptor} </td>
+       <td> ${t.monto} </td>       
      </tr>
    `);
     });
