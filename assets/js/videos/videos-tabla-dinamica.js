@@ -17,11 +17,11 @@ function crearTablaInvestigadores() {
     const thead = document.createElement('thead');
     const trHeader = document.createElement('tr');
     const thTipoAnimal = document.createElement('th');
-    thTipoAnimal.textContent = 'Tipo de Animal';
+    thTipoAnimal.textContent = 'Animal';
     const thFechaIngreso = document.createElement('th');
-    thFechaIngreso.textContent = 'Fecha de Ingreso';
+    thFechaIngreso.textContent = 'Fecha';
     const thNombreInvestigador = document.createElement('th');
-    thNombreInvestigador.textContent = 'Nombre del Investigador';
+    thNombreInvestigador.textContent = 'Investigador';
     trHeader.appendChild(thTipoAnimal);
     trHeader.appendChild(thFechaIngreso);
     trHeader.appendChild(thNombreInvestigador);
@@ -39,17 +39,19 @@ function crearTablaInvestigadores() {
         tdTipoAnimal.textContent = tipo;
         tr.appendChild(tdTipoAnimal);
 
-        // Columna para la fecha de ingreso (se puede cambiar el tipo de input según sea necesario)
+        // Estructura Columna para la fecha de ingreso (se puede cambiar el tipo de input según sea necesario)
         const tdFechaIngreso = document.createElement('td');
         const inputFechaIngreso = document.createElement('input');
         inputFechaIngreso.type = 'text';
+        inputFechaIngreso.placeholder = 'Ingrese la fecha';
         tdFechaIngreso.appendChild(inputFechaIngreso);
         tr.appendChild(tdFechaIngreso);
 
-        // Columna para el nombre del investigador (se puede cambiar el tipo de input según sea necesario)
+        // Estructura Columna para el nombre del investigador (se puede cambiar el tipo de input según sea necesario)
         const tdNombreInvestigador = document.createElement('td');
         const inputNombreInvestigador = document.createElement('input');
         inputNombreInvestigador.type = 'text';
+        inputNombreInvestigador.placeholder = 'Ingrese el nombre';
         tdNombreInvestigador.appendChild(inputNombreInvestigador);
         tr.appendChild(tdNombreInvestigador);
 
