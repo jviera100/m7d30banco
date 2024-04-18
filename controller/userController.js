@@ -17,6 +17,9 @@ const addUser = async (req, res) => {
     const { nombre, balance } = req.body;
     console.log("Datos recibidos para agregar usuario:", nombre, balance);
     console.log("Datos recibidos:", req.body);
+    if (!nombre || isNaN(balance)) {
+      throw new Error("Formato de datos incorrecto.");
+    }
     const datos = [nombre, balance];
     const newUser = await addUserQuery(datos);
     res.status(200).send(newUserusers);
@@ -42,7 +45,9 @@ const editUser = async (req, res) => {
     console.log("Datos recibidos para editar usuario:", req.body);
     const { id } = req.query;
     const { nombre, balance } = req.body;
-
+    if (!id || !nombre || isNaN(balance)) {
+      throw new Error("Formato de datos incorrecto.");
+    }
     const datos = [nombre, balance, id];
     const editUser = await editUserQuery(datos);
     res.status(200).send(editUser);
@@ -70,9 +75,12 @@ const addTranfer = async (req, res) => {
     console.log("body", req.body);
     /*  console.log('query', req.query);
         console.log('params', req.params); */
+    const { emisor, receptor, monto } = req.body;
+    if (!emisor || !receptor || isNaN(monto)) {
+      throw new Error("Formato de datos incorrecto.");
+    }
     const datos = req.body;
     console.log(datos);
-
     const result = await addTranferQuery(datos);
     res.status(200).send(result);
   } catch (error) {
