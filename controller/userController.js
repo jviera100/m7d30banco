@@ -16,6 +16,7 @@ const addUser = async (req, res) => {
   try {
     const { nombre, balance } = req.body;
     console.log("Datos recibidos para agregar usuario:", nombre, balance);
+    console.log("Datos recibidos:", req.body);
     const datos = [nombre, balance];
     const newUser = await addUserQuery(datos);
     res.status(200).send(newUserusers);
