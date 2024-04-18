@@ -5,13 +5,8 @@
     border: 0;    /*borde*/
 }
 body {
-    background-image: url("../img/banco_fondo.jpg");
-  }
-  form {
-    padding: 15px;
-    background: #f8f9fa;
-    border-radius: 10px;
-  }
+    background-image: url("../img/banco_fondo.jpg");    
+  } 
 /* Estilo section body hero */
 #body-hero {           
     padding-top: 100px; /* Ajuste para evitar que el navbar se superponga al contenido */
