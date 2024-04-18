@@ -76,6 +76,9 @@ const addTranfer = async (req, res) => {
     /*  console.log('query', req.query);
         console.log('params', req.params); */
     const { emisor, receptor, monto } = req.body;
+    console.log("emisor:", emisor);
+    console.log("receptor:", receptor);
+    console.log("monto:", monto);
     if (!emisor || !receptor || isNaN(monto)) {
       throw new Error("Formato de datos incorrecto.");
     }
