@@ -84,13 +84,13 @@ const getUsuarios = async () => {
               <td>${c.balance}</td>
               <td>
                 <button
-                  class="btn btn-warning mr-2"
+                  class="btn btn-outline-warning mr-2"
                   data-toggle="modal"
                   data-target="#exampleModal"
                   onclick="setInfoModal('${c.nombre}', '${c.balance}', '${c.id}')"
                 >
                   Editar</button
-                ><button class="btn btn-danger" onclick="eliminarUsuario('${c.id}')">Eliminar</button>
+                ><button class="btn btn-outline-danger" onclick="eliminarUsuario('${c.id}')">Eliminar</button>
               </td>
             </tr>
        `);
@@ -121,7 +121,7 @@ const getTransferencias = async () => {
     const { data } = await axios.get("http://localhost:3000/transferencias");
     console.log("Datos de transferencias:", data);
     $(".transferencias").html("");
-//no usar indices
+//DATA CAPTURA COMO OBJETO, NO USAR INDICES----------------------------------------------------------------
     data.forEach((t) => {
       $(".transferencias").append(`
      <tr>     
