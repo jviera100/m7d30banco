@@ -119,7 +119,8 @@ const getTransferencias = async () => {
   console.log("Obteniendo transferencias...");
   try {
     const { data } = await axios.get("http://localhost:3000/transferencias");
-    console.log("Datos de transferencias:", data);
+    console.log("Datos de transferencias:", data);   
+
     $(".transferencias").html("");
 //DATA CAPTURA COMO OBJETO, NO USAR INDICES----------------------------------------------------------------
     data.forEach((t) => {
