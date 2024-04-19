@@ -57,6 +57,10 @@ $("form:last").submit(async (e) => {
     alert("Debe seleccionar un emisor, receptor y monto a transferir");
     return false;
   }
+  if (isNaN(monto)) {
+    alert("Por favor, ingresa un número válido en el campo de monto.");
+    return;
+  }
   console.log("Enviando solicitud de transferencia con emisor:", emisor, ", receptor:", receptor, "y monto:", monto);
   try {
     const response = await fetch("http://localhost:3000/transferencia", {

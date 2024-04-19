@@ -71,7 +71,7 @@ const deleteUser = async (req, res) => {
   }
 };
 
-const addTranfer = async (req, res) => {
+const addTranfer = async (req, res, next) => {
   try {
     console.log("Datos recibidos para agregar transferencia:", req.body);
     console.log("body", req.body);
@@ -93,6 +93,7 @@ const addTranfer = async (req, res) => {
     const result = await addTranferQuery(datos);
     res.status(200).send(result);
   } catch (error) {
+    next(error);    
     console.error("Error al agregar transferencia:", error.stack);
     res.status(500).send(error.message);
   }
