@@ -10,12 +10,12 @@ $(document).ready(function () {
         // Tooltip initialization
         $('[data-bs-toggle="tooltip"]').tooltip();
       
-        // Evento click toolpit
+        // Evento click toolpit en grill e imagen girando
          $("#enviarCorreo").click(function () {
             alert("El correo fue enviado correctamente...");
         });
-        // Evento click ultimo formulario join
-        $(".d-inline-block").click(function () {
+        // Evento click ultimo formulario contact
+        $("#boton-form-contact").click(function () {
             alert("El correo fue enviado correctamente...");
         });          
   
