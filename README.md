@@ -87,8 +87,7 @@ Este repositorio contiene los archivos y directorios siguientes:
   - │       ├── footer.hbs
   - │       ├── form-contact.hbs
   - │       ├── grid-card.hbs
-  - │       ├── menu.hbs
-  - │       └── background.jpg
+  - │       └── menu.hbs
   - ├── .env
   - ├── .gitignore
   - ├── index.js
