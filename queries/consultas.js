@@ -45,10 +45,12 @@ const editUserQuery = async (datos) => {
   }
 };
 
+//OJO CON CASCADE DA ERROR DE SINTAXIS, PERO NO ELIMINA PORQUE ESTA RELACIONADA
+
 const deleteUserQuery = async (id) => {
   try {
     const querys = {
-      text: "DELETE FROM usuarios WHERE id = $1",
+      text: "DELETE FROM usuarios WHERE id = $1 CASCADE",
       values: [id],
     };
     const result = await pool.query(querys);
