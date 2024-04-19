@@ -24,7 +24,81 @@ index <= rutas <= query <= config conexion <= .env
     <img src="./assets/img/foto_MVC_backend_db_fronted.png" alt="">      
 <Hr>
 www.desafiolatam.com
-<br>  
+<br> 
+my_project/
+│
+├── assets/
+│   ├── sounds/
+│   ├── css/
+│   │   ├── principal/
+│   │   ├── animal/
+│   │   └── pokemon/
+│   ├── js/
+│   │   ├── principal/
+│   │   ├── pokemon/
+│   │   ├── animal/
+│   │   └── videos/
+│   ├── img/
+│   │   ├── logo.png
+│   │   └── background.jpg
+│   └── documents/
+│
+├── config/
+│   ├── db.js
+│   ├── dbMail.js
+│   └── dbSend.js
+│
+├── controller/
+│   ├── sendMail.js
+│   └── userController.js
+│
+├── db/
+│   ├── transferencias.sql
+│   └── usuarios.sql
+│
+├── middlewares/
+│   └── middlewares.js
+│
+├── model/
+│   ├── transferencias.js
+│   └── usuarios.js
+│
+├── node_modules/
+│
+├── queries/
+│   └── consultas.js
+│
+├── routes/
+│   └── routes.js
+│
+├── views/
+│   ├── inicio.hbs
+│   ├── layouts/
+│   │   └── main.hbs
+│   ├── pages/
+│   │   ├── animales.hbs
+│   │   ├── pokemon.hbs
+│   │   └── videos.hbs
+│   └── partials/
+│       ├── api-hero.hbs
+│       ├── banco.hbs
+│       ├── botones-pdf.hbs
+│       ├── carousel.hbs
+│       ├── colum-grill.hbs
+│       ├── footer.hbs
+│       ├── form-contact.hbs
+│       ├── grid-card.hbs
+│       ├── menu.hbs
+│       └── background.jpg
+│
+├── .env
+├── .gitignore
+├── index.js
+├── package-lock.json
+├── package.json
+└── README.md
+
+<br>
 <img src="./assets/img/1.jpg" alt="">
 <img src="./assets/img/2.jpg" alt="">
 <img src="./assets/img/3.jpg" alt="">

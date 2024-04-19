@@ -11,7 +11,7 @@ import path from "path";
 const __dirname = import.meta.dirname;
 
 const home = (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/index.html"));
+  res.sendFile(path.join(__dirname, "../views/layouts/main.hbs")); //ARCHIVO .HTML O .HBS PAGINA WEB A MOSTRAR👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻
 };
 const addUser = async (req, res) => {
   try {
