@@ -102,3 +102,9 @@ my_project/
 <img src="./assets/img/1.jpg" alt="">
 <img src="./assets/img/2.jpg" alt="">
 <img src="./assets/img/3.jpg" alt="">
+
+propiedad monto al transferir error formato capturado o devuelto
+error handlebars
+sequelize 
+archivos en carpeta views con extension .md cambiar a .html para que funcione pagina web mientras soluciono handlebars
+diagrama de rutas no quedo
