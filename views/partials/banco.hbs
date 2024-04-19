@@ -1,0 +1,150 @@
+ <section id="banco">
+      <h1 class="text-center" style="font-size: 60px">&#127979;</h1>
+      <h2 id="banco-titulo" class="text-center pb-0 mb-0">Banco Solar C.A</h2>
+      <hr class="w-25 pb-1" />
+      <div class="row m-auto px-5">
+        <div class="col-12 col-sm-5">
+          <form>
+            <div class="form-group text-center">
+              <h5>Agregar Nuevo Usuario</h5>
+              <hr class="bg-white w-50" />
+              <!-- CAPTURAR INPUT AL ESCUCHAR CLICK BOTON AGREGAR Y TRASLADAR A TABLA USUARIOS-->
+              <div class="d-flex align-items-center justify-content-center">
+                Nombre:
+                <input class="form-control d-inline mx-3" placeholder="nombre" required />
+                Balance:
+                <input class="form-control d-inline mx-3" placeholder="monto" required />
+                <button type="submit" class="btn btn-outline-success">Agregar</button>
+              </div>
+            </div>
+          </form>
+          <br />
+        </div>
+        <div class="col-12 col-sm-7">
+          <form>
+            <div class="form-group text-center">
+              <h5>Realizar una Transferencia</h5>
+              <hr class="bg-white w-50" />
+              <div
+                class="d-flex align-items-center justify-content-center flex-wrap"
+              >
+                <div class="mr-2">
+                  <!-- CAPTURAR INPUT AL ESCUCHAR CLICK BOTON REALIZAR Y TRASLADAR A TABLA TRANSACCIONES-->
+                  Emisor:
+                  <select
+                    id="emisor"
+                    class="form-control mx-2 w-auto d-inline"
+                  ></select>
+                </div>
+
+                <div class="mr-3">
+                  Receptor:
+                  <select
+                    id="receptor"
+                    class="form-control mx-2 w-auto d-inline"
+                  ></select>
+                </div>
+
+                <div class="mr-3">
+                  Monto:
+
+                  <input
+                    type="text"
+                    class="form-control mx-2 w-auto d-inline"
+                    placeholder="ingresa monto"
+                    id="monto"
+                  />
+                </div>
+
+                <button type="submit" class="btn btn-outline-success">Realizar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-12 row mt-3 mx-0 px-0">
+          <div class="col-12 col-sm-5 text-center">
+            <!-- RECIBO LOS INPUT DE BOTON AGREGAR -->
+            <h5>Tabla de usuarios</h5>
+            <table id="tablas" class="table bg-light">
+              <thead class="bg-danger text-white">
+                <th>Nombre</th>
+                <th>Balance</th>
+                <th></th>
+              </thead>
+              <tbody class="usuarios"></tbody>
+            </table>
+          </div>
+          <div class="col-12 col-sm-7 text-center">
+            <!-- RECIBO LOS INPUT DE BOTON REALIZAR -->
+            <h5>Tabla de Transferencias</h5>
+            <table id="tablas" class="table bg-light">
+              <thead class="bg-danger text-white">
+                <th>Fecha</th>
+                <th>Emisor</th>
+                <th>Receptor</th>
+                <th>Monto</th>
+              </thead>
+              <tbody class="transferencias">
+                <tr>
+                  <td>25/01/2021 10:00</td>
+                  <td>Luis Vallejo</td>
+                  <td>Pedro Rivas</td>
+                  <td>60.000</td>
+                </tr>
+                <tr>
+                  <td>25/01/2021 13:15</td>
+                  <td>Pedro Rivas</td>
+                  <td>Luis Vallejo</td>
+                  <td>20.000</td>
+                </tr>
+                <tr>
+                  <td>25/01/2021 17:25</td>
+                  <td>Luis Vallejo</td>
+                  <td>Pedro Rivas</td>
+                  <td>30.000</td>
+                </tr>
+                <tr>
+                  <td>25/01/2021 21:04</td>
+                  <td>Pedro Rivas</td>
+                  <td>Luis Vallejo</td>
+                  <td>10.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>  
+
+    <!-- TABLA MODAL -->
+
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog text-dark" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-2">Nombre</div>
+                <div class="col-10">
+                  <input id="nombreEdit" type="text" class="form-control" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">Balance</div>
+                <div class="col-10">
+                  <input id="balanceEdit" type="text" class="form-control" />
+                </div>
+              </div>
+
+              <button class="btn btn-outline-danger" id="editButton">Editar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
