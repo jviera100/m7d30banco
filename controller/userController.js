@@ -10,11 +10,13 @@ import {
 import path from "path";
 const __dirname = import.meta.dirname;
 
+//ARCHIVO .HTML PAGINA WEB A MOSTRAR👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻
 const home = (req, res) => {
-   res.sendFile(path.join(__dirname, "../views/index.html")); //ARCHIVO .HTML O .HBS PAGINA WEB A MOSTRAR👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻
+   res.sendFile(path.join(__dirname, "../views/index.html")); 
  };
+ //ARCHIVO .HBS PAGINA WEB A MOSTRAR👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻
 // const home = (req, res) => {
-//   res.render(path.join(__dirname, "../views/layouts/main.hbs")); //ARCHIVO .HTML O .HBS PAGINA WEB A MOSTRAR👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻
+//   res.render(path.join(__dirname, "../views/layouts/main.hbs")); 
 //   };
 //ARCHIVO .HTML O .HBS PAGINA WEB A MOSTRAR👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻
 // const home = (req, res) => {
