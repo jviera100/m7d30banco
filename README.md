@@ -71,10 +71,9 @@ Este repositorio contiene los archivos y directorios siguientes:
   - ├── routes/
   - │   └── routes.js
   - ├── views/
-  - │   ├── inicio.hbs
+  - │   |
   - │   ├── layouts/
   - │   │   └── main.hbs
-  - │   ├── pages/
   - │   │   ├── animales.hbs
   - │   │   ├── pokemon.hbs
   - │   │   └── videos.hbs

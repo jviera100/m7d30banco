@@ -16,9 +16,16 @@ app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); /
 app.use('/js', express.static(__dirname + '/node_modules/jquery/dist')); // jQuery
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // Bootstrap CSS
 // Configuración de Handlebars
-app.engine(".hbs", exphbs.engine({ extname: ".hbs" }));// extension => Define el motor de plantillas con la extensión .hbs
-app.set("view engine", ".hbs");// app => Establece Handlebars como el motor de vistas
-app.set("views", "./views");// carpeta vista => Define la carpeta de vistas para las plantillas Handlebars
+app.engine('.hbs', exphbs.engine({ // Establece Handlebars como el motor de vistas
+  extname: '.hbs',
+  defaultLayout: 'main',
+  layoutsDir: path.join(__dirname, '..', 'views/layouts'), // Ruta para los layouts
+  partialsDir: [
+    path.join(__dirname, '..', '/views/partials') // Ruta para los parciales
+  ]  
+}));
+app.set('view engine', '.hbs'); // Establece Handlebars como el motor de vistas
+app.set('views', path.join(__dirname, '..', 'views')); // Define la carpeta de vistas para las plantillas Handlebars
 // Middleware de manejo de errores global
 app.use((err, req, res, next) => {
     console.error('Error:', err.stack);
