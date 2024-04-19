@@ -1,3 +1,4 @@
+import chalk from "chalk";
 import {
   addUserQuery,
   getUserQuery,
@@ -20,13 +21,13 @@ const addUser = async (req, res) => {
     console.log("Datos recibidos para agregar usuario:", nombre, balance);
     console.log("Datos recibidos:", req.body);
     if (!nombre || isNaN(balance)) {
-      throw new Error("Formato de datos incorrecto.");
+      throw new Error(chalk.underline.bgRedBright.magenta.bold.italic("Formato de datos incorrecto."));
     }
     const datos = [nombre, balance];
     const newUser = await addUserQuery(datos);
     res.status(200).send(newUserusers);
   } catch (error) {
-    console.error("Error al agregar usuario:", error.stack);
+    console.error(chalk.underline.bgRedBright.magenta.bold.italic("Error al agregar usuario:", error.stack));
     res.status(500).send(error.message);
   }
 };
@@ -36,7 +37,7 @@ const getUser = async (req, res) => {
     const users = await getUserQuery();
     res.status(200).send(users);
   } catch (error) {
-    console.error("Error al obtener usuarios:", error.stack);
+    console.error(chalk.underline.bgRedBright.magenta.bold.italic("Error al obtener usuarios:", error.stack));
     res.status(500).send(error.message);
   }
 };
@@ -48,13 +49,13 @@ const editUser = async (req, res) => {
     const { id } = req.query;
     const { nombre, balance } = req.body;
     if (!id || !nombre || isNaN(balance)) {
-      throw new Error("Formato de datos incorrecto.");
+      throw new Error(chalk.underline.bgRedBright.magenta.bold.italic("Formato de datos incorrecto."));
     }
     const datos = [nombre, balance, id];
     const editUser = await editUserQuery(datos);
     res.status(200).send(editUser);
   } catch (error) {
-    console.error("Error al editar usuario:", error.stack);
+    console.error(chalk.underline.bgRedBright.magenta.bold.italic("Error al editar usuario:", error.stack));
     res.status(500).send(error.message);
   }
 };
@@ -66,7 +67,7 @@ const deleteUser = async (req, res) => {
     const deleteUser = await deleteUserQuery(id);
     res.status(200).send(deleteUser);
   } catch (error) {
-    console.error("Error al eliminar usuario:", error.stack);
+    console.error(chalk.underline.bgRedBright.magenta.bold.italic("Error al eliminar usuario:", error.stack));
     res.status(500).send(error.message);
   }
 };
@@ -84,17 +85,19 @@ const addTranfer = async (req, res, next) => {
     console.log("Tipo de dato de monto:", typeof monto);
     console.log("emisor:", emisor);
     console.log("receptor:", receptor);
-    console.log("monto:", montoNum);
+    console.log(chalk.underline.bgRedBright.magenta.bold.italic("monto:", montoNum));
     if (!emisor || !receptor || isNaN(montoNum)) {
-      throw new Error("Formato de datos incorrecto.");
+      throw new Error(chalk.underline.bgRedBright.magenta.bold.italic("Formato de datos incorrecto."));
     }
+    console.log(chalk.underline.bgCyanBright.magenta.bold.italic(JSON.stringify({ message: 'Data capturada desde el fronted:', emisor, receptor, montoNum }, null, 2)));
     const datos = { emisor, receptor, monto: montoNum }; // Usamos montoNum en lugar de monto    
     console.log(datos);
     const result = await addTranferQuery(datos);
     res.status(200).send(result);
   } catch (error) {
     next(error);    
-    console.error("Error al agregar transferencia:", error.stack);
+    console.error(chalk.underline.bgRedBright.magenta.bold.italic("Error al agregar transferencia:", error.stack));
+    console.log(chalk.underline.bgRedBright.magenta.bold.italic(JSON.stringify({ message: 'Error al agregar transferencia:', error }, null, 2)));
     res.status(500).send(error.message);
   }
 };
@@ -103,7 +106,7 @@ const getTranfer = async (req, res) => {
     const result = await getTransferQuery();    
     res.status(200).json(result);
   } catch (error) {
-    console.error("Error al obtener transferencias:", error.stack);
+    console.error(chalk.underline.bgRedBright.magenta.bold.italic("Error al obtener transferencias:", error.stack));
     res.status(500).send(error.message);
   }
 }

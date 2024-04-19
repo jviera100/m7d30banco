@@ -1,4 +1,5 @@
 import pg from 'pg';
+import chalk from "chalk";
 // import { Sequelize } from 'sequelize';
 
 const { Pool } = pg;
@@ -43,7 +44,7 @@ pool.connect((err, client, release) => {
     if (err) {
         return console.error('Error al conectarse a la base de datos:', err.stack);
     }
-    console.log('\nConexión con la base de datos establecida.');
+    console.log(chalk.underline.bgCyanBright.magenta.bold.italic('\nConexión con la base de datos establecida.'));
     release();
 });
 export default pool;
