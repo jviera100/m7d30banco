@@ -25,6 +25,11 @@ index <= rutas <= query <= config conexion <= .env
 <Hr>
 www.desafiolatam.com
 <br> 
+
+## Estructura de directorios🚀
+
+Este proyecto tiene una estructura organizada en directorios para manejar diferentes aspectos como estilos, scripts, imágenes, bases de datos y vistas. Reutilizable, asegúrate de ajustar los nombres de los archivos y directorios según tu proyecto específico.
+
 my_project/
 │
 ├── assets/
@@ -97,6 +102,8 @@ my_project/
 ├── package-lock.json
 ├── package.json
 └── README.md
+
+my_project/ │ ├── assets/ │ ├── sounds/ │ ├── css/ │ │ ├── principal/ │ │ ├── animal/ │ │ └── pokemon/ │ ├── js/ │ │ ├── principal/ │ │ ├── pokemon/ │ │ ├── animal/ │ │ └── videos/ │ ├── img/ │ │ ├── logo.png │ │ └── background.jpg │ └── documents/ │ ├── config/ │ ├── db.js │ ├── dbMail.js │ └── dbSend.js │ ├── controller/ │ ├── sendMail.js │ └── userController.js │ ├── db/ │ ├── transferencias.sql │ └── usuarios.sql │ ├── middlewares/ │ └── middlewares.js │ ├── model/ │ ├── transferencias.js │ └── usuarios.js │ ├── node_modules/ │ ├── queries/ │ └── consultas.js │ ├── routes/ │ └── routes.js │ ├── views/ │ ├── inicio.hbs │ ├── layouts/ │ │ └── main.hbs │ ├── pages/ │ │ ├── animales.hbs │ │ ├── pokemon.hbs │ │ └── videos.hbs │ └── partials/ │ ├── api-hero.hbs │ ├── banco.hbs │ ├── botones-pdf.hbs │ ├── carousel.hbs │ ├── colum-grill.hbs │ ├── footer.hbs │ ├── form-contact.hbs │ ├── grid-card.hbs │ ├── menu.hbs │ └── background.jpg │ ├── .env ├── .gitignore ├── index.js ├── package-lock.json ├── package.json └── README.md
 
 <br>
 <img src="./assets/img/1.jpg" alt="">
