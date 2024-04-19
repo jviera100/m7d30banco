@@ -28,3 +28,5 @@ www.desafiolatam.com
 <img src="./assets/img/1.jpg" alt="">
 <img src="./assets/img/2.jpg" alt="">
 <img src="./assets/img/3.jpg" alt="">
+
+aprendiendo
