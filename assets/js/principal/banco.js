@@ -37,7 +37,7 @@ $("form:first").submit(async (e) => {
     const response = await fetch("http://localhost:3000/usuario", {
       method: "post",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ nombre, balance }),
+      body: JSON.stringify({ nombre, balance }), //fronted envia solicitud a backend formato json
     });
     $("form:first input:first").val("");
     $("form:first input:nth-child(2)").val("");
@@ -52,7 +52,7 @@ $("form:last").submit(async (e) => {
   e.preventDefault();
   let emisor = $("form:last select:first").val();
   let receptor = $("form:last select:last").val();
-  let monto = $("#monto").val(); //string capturado por el input html con jquery en javascript fronted
+  let monto = parseFloat($("#monto").val());//string capturado convertido a numero por el input html con jquery en javascript fronted
   if (!monto || !emisor || !receptor) {
     alert("Debe seleccionar un emisor, receptor y monto a transferir");
     return false;
@@ -122,7 +122,7 @@ const getTransferencias = async () => {
     console.log("Datos de transferencias:", data);   
 
     $(".transferencias").html("");
-//DATA CAPTURA COMO OBJETO, NO USAR INDICES----------------------------------------------------------------
+//LA DATA SE CAPTURA COMO OBJETO, NO USAR INDICES----------------------------------------------------------------
     data.forEach((t) => {
       $(".transferencias").append(`
      <tr>     

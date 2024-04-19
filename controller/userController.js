@@ -14,7 +14,9 @@ const home = (req, res) => {
 };
 const addUser = async (req, res) => {
   try {
-    const { nombre, balance } = req.body;
+    const { nombre, balance } = req.body; //req.body permite que backend recibe datos formato javascript
+     // Agregar la línea para verificar el tipo de dato de monto
+    console.log("Tipo de dato de balance:", typeof balance);
     console.log("Datos recibidos para agregar usuario:", nombre, balance);
     console.log("Datos recibidos:", req.body);
     if (!nombre || isNaN(balance)) {
@@ -75,14 +77,18 @@ const addTranfer = async (req, res) => {
     console.log("body", req.body);
     /*  console.log('query', req.query);
         console.log('params', req.params); */
-    const { emisor, receptor, monto } = req.body;
+    const { emisor, receptor, monto } = req.body; //req.body permite que backend recibe datos formato javascript
+    // Conversión del monto a un número
+    const montoNum = parseFloat(monto);
+     // Agregar la línea para verificar el tipo de dato de monto
+    console.log("Tipo de dato de monto:", typeof monto);
     console.log("emisor:", emisor);
     console.log("receptor:", receptor);
-    console.log("monto:", monto);
-    if (!emisor || !receptor || isNaN(monto)) {
+    console.log("monto:", montoNum);
+    if (!emisor || !receptor || isNaN(montoNum)) {
       throw new Error("Formato de datos incorrecto.");
     }
-    const datos = req.body;
+    const datos = { emisor, receptor, monto: montoNum }; // Usamos montoNum en lugar de monto    
     console.log(datos);
     const result = await addTranferQuery(datos);
     res.status(200).send(result);
