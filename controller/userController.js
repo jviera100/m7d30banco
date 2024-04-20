@@ -10,19 +10,6 @@ import {
 import path from "path";
 const __dirname = import.meta.dirname;
 
-//ARCHIVO .HTML PAGINA WEB A MOSTRAR👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻
-const home = (req, res) => {
-   res.sendFile(path.join(__dirname, "../views/index.html")); 
- };
- //ARCHIVO .HBS PAGINA WEB A MOSTRAR👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻
-// const home = (req, res) => {
-//   res.render(path.join(__dirname, "../views/layouts/main.hbs")); 
-//   };
-//ARCHIVO .HTML O .HBS PAGINA WEB A MOSTRAR👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻👨🏽‍💻
-// const home = (req, res) => {
-//   res.render('main', { title: 'Página de inicio' }); // Renderiza la vista 'main.hbs' y pasa datos dinámicos si es necesario
-// };
-
 const addUser = async (req, res) => {
   try {
     const { nombre, balance } = req.body; //req.body permite que backend recibe datos formato javascript
@@ -120,4 +107,4 @@ const getTranfer = async (req, res) => {
     res.status(500).send(error.message);
   }
 }
-export { home, addUser, getUser, editUser, deleteUser, addTranfer, getTranfer };
+export { addUser, getUser, editUser, deleteUser, addTranfer, getTranfer };
