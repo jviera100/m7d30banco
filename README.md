@@ -122,4 +122,5 @@ Este repositorio contiene los archivos y directorios siguientes:
 <img src="./assets/img/2.jpg" alt="">
 <img src="./assets/img/3.jpg" alt="">
 
+...
 al transferir, propiedad monto, da error en formato capturado o devuelto, handlebars y sequelize no usado por error
