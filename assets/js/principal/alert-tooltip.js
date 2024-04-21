@@ -16,7 +16,7 @@ $(document).ready(function () {
         });
         // Evento click ultimo formulario contact
         $("#boton-form-contact").click(function () {
-            alert("El correo fue enviado correctamente...");
+            alert("Registrado correctamente...");
         });          
   
     });

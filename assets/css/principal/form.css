@@ -3,32 +3,31 @@
     border-radius: 10px;
     font-size: 12px;
   }
+  /* input tabla formulario*/
+.form-control {
+    background: #444444;
+    color: #888888;
+}
 /* titulo form contact */
 #contact {
     font-size: 40px; /* Tamaño del texto */
-    color: black; /* Color del texto */
-    -webkit-text-stroke: 2px black; /* Ancho y color del borde */  
-    text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white; /* Definición del "borde" */  
- }
- /* tamaño input form contact */
+    }
+/* label form contact */
+.form-label {
+    color: #888888;
+}    
+ /* input form contact */
 .form-contact {
     min-width: 900px;
-    max-height: 30px;    
+    max-height: 30px;
+    background: #444444;
+    color: #888888;    
 }
-/* tamaño alto respuesta hero */
+/* hero form tamaño alto respuesta */
 #respuesta-form {    
     margin-bottom: 10px; /* Reducir el margen inferior del formulario */       
 }
-/* tamaño imagen hero en form */
+/* hero form tamaño imagen */
 .header_img{
     width: 100px;
-}
-label {
-    color: black;
-    font-size: 30px;
-    -webkit-text-stroke: 2px black; /* Ancho y color del borde */  
-    text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white; /* Definición del "borde" */  
-}
-
-
-    
+}    
