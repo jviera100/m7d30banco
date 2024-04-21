@@ -1,6 +1,0 @@
-/* botones PDF */
-#botones-pdf {
-    display: flex;
-    justify-content: center;
-    gap: 10px; /* Ajusta el valor según el espacio que desees entre los botones */
-  }
